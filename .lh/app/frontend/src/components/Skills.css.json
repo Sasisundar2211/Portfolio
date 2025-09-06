@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/frontend/src/components/Skills.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1757145536251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757146061201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,15 +14,22 @@\n \r\n .skill-icon {\r\n     font-size: 4rem; /* Or your desired size */\r\n     transition: color 0.3s ease, transform 0.3s ease;\r\n+    color: #6b7280; /* Default grayscale color for light mode */\r\n }\r\n \r\n .skill-icon:hover {\r\n     transform: scale(1.1);\r\n+    color: #111827; /* Darker grayscale on hover for light mode */\r\n }\r\n \r\n-/* Apply Google Colors in a cycle */\r\n-.skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */\r\n-.skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */\r\n\\ No newline at end of file\n-.skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */\r\n-.skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */\n+/* Apply Google Colors in a cycle only in dark mode */\r\n+.dark .skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */\r\n+.dark .skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */\r\n+.dark .skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */\r\n+.dark .skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */\r\n+\r\n+.dark .skill-icon:hover {\r\n+    /* In dark mode, we don't need a color change on hover, just the scale */\r\n+    transform: scale(1.1);\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757149380307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     color: #6b7280; /* Default grayscale color for light mode */\r\n }\r\n \r\n .skill-icon:hover {\r\n-    transform: scale(1.1);\r\n+    transform: scale(1.05); /* Reduced scale on hover */\r\n     color: #111827; /* Darker grayscale on hover for light mode */\r\n }\r\n \r\n /* Apply Google Colors in a cycle only in dark mode */\r\n@@ -30,6 +30,6 @@\n .dark .skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */\r\n \r\n .dark .skill-icon:hover {\r\n     /* In dark mode, we don't need a color change on hover, just the scale */\r\n-    transform: scale(1.1);\r\n+    transform: scale(1.05); /* Reduced scale on hover */\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757149568504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n .skill-icon {\r\n     font-size: 4rem; /* Or your desired size */\r\n     transition: color 0.3s ease, transform 0.3s ease;\r\n-    color: #6b7280; /* Default grayscale color for light mode */\r\n+    color: #4b5563; /* Darker gray for better contrast in light mode */\r\n }\r\n \r\n .skill-icon:hover {\r\n     transform: scale(1.05); /* Reduced scale on hover */\r\n"
+                }
+            ],
+            "date": 1757145536251,
+            "name": "Commit-0",
+            "content": ".skills-container {\r\n    /* Add your container styles here */\r\n    padding: 4rem 2rem;\r\n    text-align: center;\r\n}\r\n\r\n.skills-grid {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    gap: 2rem;\r\n    margin-top: 2rem;\r\n}\r\n\r\n.skill-icon {\r\n    font-size: 4rem; /* Or your desired size */\r\n    transition: color 0.3s ease, transform 0.3s ease;\r\n}\r\n\r\n.skill-icon:hover {\r\n    transform: scale(1.1);\r\n}\r\n\r\n/* Apply Google Colors in a cycle */\r\n.skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */\r\n.skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */\r\n.skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */\r\n.skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+.skill-bar-progress {
+    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);
+    height: 16px; /* h-4 */
+    border-radius: 9999px; /* rounded-full */
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/frontend/src/ThemeContext.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1757145708629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1757145708629,
+            "name": "Commit-0",
+            "content": "import React, { createContext, useState, useEffect, useContext } from 'react';\r\n\r\nconst ThemeContext = createContext();\r\n\r\nexport const useTheme = () => useContext(ThemeContext);\r\n\r\nexport const ThemeProvider = ({ children }) => {\r\n    const [theme, setTheme] = useState(() => {\r\n        // Check for saved theme in local storage or default to 'dark'\r\n        return localStorage.getItem('theme') || 'dark';\r\n    });\r\n\r\n    useEffect(() => {\r\n        const root = window.document.documentElement;\r\n        root.classList.remove('light', 'dark');\r\n        root.classList.add(theme);\r\n        localStorage.setItem('theme', theme);\r\n    }, [theme]);\r\n\r\n    const toggleTheme = () => {\r\n        setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));\r\n    };\r\n\r\n    return (\r\n        <ThemeContext.Provider value={{ theme, toggleTheme }}>\r\n            {children}\r\n        </ThemeContext.Provider>\r\n    );\r\n};"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/frontend/src/components/BackToTopButton.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1757145585648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757145646806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n .back-to-top-button {\r\n     position: fixed;\r\n     bottom: 30px;\r\n     right: 30px;\r\n-    background: rgba(0, 122, 255, 0.5);\r\n+    background: rgba(66, 133, 244, 0.5); /* Google Blue */\r\n     backdrop-filter: blur(10px);\r\n     -webkit-backdrop-filter: blur(10px);\r\n-    border: 1px solid rgba(0, 122, 255, 0.6);\r\n+    border: 1px solid rgba(66, 133, 244, 0.6);\r\n     color: white;\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n@@ -26,6 +26,6 @@\n }\r\n \r\n .back-to-top-button:hover {\r\n     transform: scale(1.1);\r\n-    background: rgba(0, 122, 255, 0.7);\r\n+    background: rgba(66, 133, 244, 0.7);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757146649740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     background: rgba(66, 133, 244, 0.5); /* Google Blue */\r\n     backdrop-filter: blur(10px);\r\n     -webkit-backdrop-filter: blur(10px);\r\n     border: 1px solid rgba(66, 133, 244, 0.6);\r\n-    color: white;\r\n+    color: #ffffff; /* Default for dark mode */\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n     display: flex;\r\n@@ -27,5 +27,9 @@\n \r\n .back-to-top-button:hover {\r\n     transform: scale(1.1);\r\n     background: rgba(66, 133, 244, 0.7);\r\n+}\r\n+\r\n+body:not(.dark) .back-to-top-button {\r\n+    color: #ffffff; /* Keep icon white for contrast against blue button */\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757149379413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     visibility: visible;\r\n }\r\n \r\n .back-to-top-button:hover {\r\n-    transform: scale(1.1);\r\n+    transform: scale(1.05); /* Reduced scale on hover */\r\n     background: rgba(66, 133, 244, 0.7);\r\n }\r\n \r\n body:not(.dark) .back-to-top-button {\r\n"
+                },
+                {
+                    "date": 1757149478311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n .back-to-top-button {\r\n     position: fixed;\r\n     bottom: 30px;\r\n     right: 30px;\r\n-    background: rgba(66, 133, 244, 0.5); /* Google Blue */\r\n+    background: rgba(48, 209, 88, 0.5); /* iOS-style green */\r\n     backdrop-filter: blur(10px);\r\n     -webkit-backdrop-filter: blur(10px);\r\n-    border: 1px solid rgba(66, 133, 244, 0.6);\r\n+    border: 1px solid rgba(48, 209, 88, 0.6);\r\n     color: #ffffff; /* Default for dark mode */\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n@@ -26,9 +26,9 @@\n }\r\n \r\n .back-to-top-button:hover {\r\n     transform: scale(1.05); /* Reduced scale on hover */\r\n-    background: rgba(66, 133, 244, 0.7);\r\n+    background: rgba(48, 209, 88, 0.7);\r\n }\r\n \r\n body:not(.dark) .back-to-top-button {\r\n     color: #ffffff; /* Keep icon white for contrast against blue button */\r\n"
+                },
+                {
+                    "date": 1757149568049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n .back-to-top-button {\r\n     position: fixed;\r\n     bottom: 30px;\r\n     right: 30px;\r\n-    background: rgba(48, 209, 88, 0.5); /* iOS-style green */\r\n+    background: rgba(26, 147, 65, 0.7); /* Darker, more accessible green */\r\n     backdrop-filter: blur(10px);\r\n     -webkit-backdrop-filter: blur(10px);\r\n-    border: 1px solid rgba(48, 209, 88, 0.6);\r\n+    border: 1px solid rgba(26, 147, 65, 0.8);\r\n     color: #ffffff; /* Default for dark mode */\r\n     width: 50px;\r\n     height: 50px;\r\n     border-radius: 50%;\r\n@@ -26,9 +26,9 @@\n }\r\n \r\n .back-to-top-button:hover {\r\n     transform: scale(1.05); /* Reduced scale on hover */\r\n-    background: rgba(48, 209, 88, 0.7);\r\n+    background: rgba(26, 147, 65, 0.9);\r\n }\r\n \r\n body:not(.dark) .back-to-top-button {\r\n     color: #ffffff; /* Keep icon white for contrast against blue button */\r\n"
+                }
+            ],
+            "date": 1757145585648,
+            "name": "Commit-0",
+            "content": ".back-to-top-button {\r\n    position: fixed;\r\n    bottom: 30px;\r\n    right: 30px;\r\n    background: rgba(0, 122, 255, 0.5);\r\n    backdrop-filter: blur(10px);\r\n    -webkit-backdrop-filter: blur(10px);\r\n    border: 1px solid rgba(0, 122, 255, 0.6);\r\n    color: white;\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 50%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    cursor: pointer;\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;\r\n    z-index: 1000;\r\n}\r\n\r\n.back-to-top-button.show {\r\n    opacity: 1;\r\n    visibility: visible;\r\n}\r\n\r\n.back-to-top-button:hover {\r\n    transform: scale(1.1);\r\n    background: rgba(0, 122, 255, 0.7);\r\n}"
+        }
+    ]
+}

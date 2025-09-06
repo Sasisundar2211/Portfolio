@@ -1,0 +1,35 @@
+.skills-container {
+    /* Add your container styles here */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-icon {
+    font-size: 4rem; /* Or your desired size */
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #6b7280; /* Default grayscale color for light mode */
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+    color: #111827; /* Darker grayscale on hover for light mode */
+}
+
+/* Apply Google Colors in a cycle only in dark mode */
+.dark .skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */
+.dark .skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */
+.dark .skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */
+.dark .skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */
+
+.dark .skill-icon:hover {
+    /* In dark mode, we don't need a color change on hover, just the scale */
+    transform: scale(1.1);
+}

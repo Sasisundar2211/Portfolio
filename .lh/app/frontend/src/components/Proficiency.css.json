@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/frontend/src/components/Proficiency.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1757146347809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757147581784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .skill-bar-progress {\r\n-    background: linear-gradient(90deg, #4285F4, #34A853);\r\n+    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);\r\n     height: 16px; /* h-4 */\r\n     border-radius: 9999px; /* rounded-full */\r\n     transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);\r\n     text-align: center;\r\n"
+                },
+                {
+                    "date": 1757149379853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .skill-bar-progress {\r\n     background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);\r\n     height: 16px; /* h-4 */\r\n     border-radius: 9999px; /* rounded-full */\r\n-    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);\r\n+    transition: width 2s cubic-bezier(0.25, 1, 0.5, 1); /* Slower and smoother ease-out */\r\n     text-align: center;\r\n     color: white;\r\n     display: flex;\r\n     align-items: center;\r\n"
+                },
+                {
+                    "date": 1757152087318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .skill-bar-progress {\r\n-    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);\r\n+    background: hsl(var(--primary-foreground)); /* Using a theme variable for a clean look */\r\n     height: 16px; /* h-4 */\r\n     border-radius: 9999px; /* rounded-full */\r\n     transition: width 2s cubic-bezier(0.25, 1, 0.5, 1); /* Slower and smoother ease-out */\r\n     text-align: center;\r\n"
+                },
+                {
+                    "date": 1757152122804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .skill-bar-progress {\r\n-    background: hsl(var(--primary-foreground)); /* Using a theme variable for a clean look */\r\n+    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);\r\n     height: 16px; /* h-4 */\r\n     border-radius: 9999px; /* rounded-full */\r\n-    transition: width 2s cubic-bezier(0.25, 1, 0.5, 1); /* Slower and smoother ease-out */\r\n+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);\r\n     text-align: center;\r\n     color: white;\r\n     display: flex;\r\n     align-items: center;\r\n"
+                },
+                {
+                    "date": 1757152240181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .skill-bar-progress {\r\n-    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);\r\n-    height: 16px; /* h-4 */\r\n-    border-radius: 9999px; /* rounded-full */\r\n+    background: hsl(var(--primary)); /* Use theme's primary color for a clean look */\r\n+    height: 8px; /* Thinner bar for iOS feel */\r\n+    border-radius: 4px; /* Subtle rounding */\r\n     transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);\r\n     text-align: center;\r\n     color: white;\r\n     display: flex;\r\n"
+                }
+            ],
+            "date": 1757146347809,
+            "name": "Commit-0",
+            "content": ".skill-bar-progress {\r\n    background: linear-gradient(90deg, #4285F4, #34A853);\r\n    height: 16px; /* h-4 */\r\n    border-radius: 9999px; /* rounded-full */\r\n    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);\r\n    text-align: center;\r\n    color: white;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}"
+        }
+    ]
+}
