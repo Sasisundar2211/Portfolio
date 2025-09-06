@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1757147828020,
@@ -24,6 +24,22 @@
                 {
                     "date": 1757151260929,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n                 <div className=\"flex-shrink-0\">\n                   <img \n                     src={exp.companylogo} \n                     alt={exp.company}\n-                    className=\"w-20 h-20 object-contain bg-white rounded-lg p-2\"\n+                    className=\"w-20 h-20 object-contain bg-card rounded-lg p-2\"\n                   />\n                 </div>\n \n                 {/* Experience Details */}\n"
+                },
+                {
+                    "date": 1757162195789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n import { workExperiences } from '../data/mockData';\n \n+// Renders the Work Experience section, mapping over data to create experience cards.\n const Experience = () => {\n   return (\n     <section id=\"experience\" className=\"py-20 bg-background text-foreground fade-in-up\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n@@ -13,18 +14,18 @@\n         <div className=\"space-y-12\">\n           {workExperiences.experience.map((exp, index) => (\n             <div key={index} className=\"glass-card p-8 rounded-lg\">\n               <div className=\"flex flex-col md:flex-row items-start md:items-center gap-6\">\n-                {/* Company Logo */}\n+                {/* Container for the company logo. */}\n                 <div className=\"flex-shrink-0\">\n                   <img \n                     src={exp.companylogo} \n                     alt={exp.company}\n                     className=\"w-20 h-20 object-contain bg-card rounded-lg p-2\"\n                   />\n                 </div>\n \n-                {/* Experience Details */}\n+                {/* Container for experience details like role, company, and description. */}\n                 <div className=\"flex-grow\">\n                   <div className=\"flex flex-col md:flex-row md:justify-between md:items-start mb-4\">\n                     <div>\n                       <h3 className=\"text-2xl font-bold text-foreground mb-2\">{exp.company}</h3>\n"
+                },
+                {
+                    "date": 1757187317267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         </div>\n \n         <div className=\"space-y-12\">\n           {workExperiences.experience.map((exp, index) => (\n-            <div key={index} className=\"glass-card p-8 rounded-lg\">\n+            <div key={index} className=\"glass-card p-8 rounded-lg hover-glow\">\n               <div className=\"flex flex-col md:flex-row items-start md:items-center gap-6\">\n                 {/* Container for the company logo. */}\n                 <div className=\"flex-shrink-0\">\n                   <img \n"
+                },
+                {
+                    "date": 1757187359830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         </div>\n \n         <div className=\"space-y-12\">\n           {workExperiences.experience.map((exp, index) => (\n-            <div key={index} className=\"glass-card p-8 rounded-lg hover-glow\">\n+            <div key={index} className=\"glass-card p-8 rounded-lg hover-border-gradient\">\n               <div className=\"flex flex-col md:flex-row items-start md:items-center gap-6\">\n                 {/* Container for the company logo. */}\n                 <div className=\"flex-shrink-0\">\n                   <img \n"
+                },
+                {
+                    "date": 1757187743739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           <h2 className=\"text-4xl lg:text-5xl font-bold mb-6\">{workExperiences.title}</h2>\n           <p className=\"text-xl text-muted-foreground\">A timeline of my professional growth and contributions.</p>\n         </div>\n \n-        <div className=\"space-y-12\">\n+        <div className=\"space-y-16 md:space-y-20\">\n           {workExperiences.experience.map((exp, index) => (\n             <div key={index} className=\"glass-card p-8 rounded-lg hover-border-gradient\">\n               <div className=\"flex flex-col md:flex-row items-start md:items-center gap-6\">\n                 {/* Container for the company logo. */}\n"
                 }
             ],
             "date": 1757147828020,

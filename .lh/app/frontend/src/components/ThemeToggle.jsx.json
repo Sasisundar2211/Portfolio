@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1757145709045,
@@ -24,6 +24,10 @@
                 {
                     "date": 1757146250950,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,19 @@\n-import React from 'react';\r\n-import { useTheme } from '../context/ThemeContext';\r\n-import { Sun, Moon } from 'lucide-react';\r\n-import { Button } from './ui/button';\r\n-\r\n-const ThemeToggle = () => {\r\n-    const { theme, toggleTheme } = useTheme();\r\n-\r\n-    return (\r\n-        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white\">\n-            {theme === 'dark' ? <Sun className=\"h-6 w-6\" /> : <Moon className=\"h-6 w-6\" />}\r\n-        </Button>\r\n-    );\r\n-};\r\n-\r\n+import React from 'react';\n+import { useTheme } from '../ThemeContext';\n+import { Sun, Moon } from 'lucide-react';\n+import { Button } from './ui/button';\n+\n+const ThemeToggle = () => {\n+    const { theme, toggleTheme } = useTheme();\n+\n+    return (\n+        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white relative w-9 h-9\">\n+            <div className=\"theme-icon-wrapper\">\n+                {/* The key prop ensures React re-renders the icon, triggering the animation */}\n+                {theme === 'dark' ? <Sun key=\"sun\" className=\"h-6 w-6\" /> : <Moon key=\"moon\" className=\"h-6 w-6\" />}\n+            </div>\n+        </Button>\n+    );\n+};\n+\n export default ThemeToggle;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757168905018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,21 @@\n-import React from 'react';\n-import { useTheme } from '../ThemeContext';\n-import { Sun, Moon } from 'lucide-react';\n-import { Button } from './ui/button';\n-\n-const ThemeToggle = () => {\n-    const { theme, toggleTheme } = useTheme();\n-\n-    return (\n-        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white relative w-9 h-9\">\n-            <div className=\"theme-icon-wrapper\">\n-                {/* The key prop ensures React re-renders the icon, triggering the animation */}\n-                {theme === 'dark' ? <Sun key=\"sun\" className=\"h-6 w-6\" /> : <Moon key=\"moon\" className=\"h-6 w-6\" />}\n-            </div>\n-        </Button>\n-    );\n-};\n-\n+import React from 'react';\r\n+import { useTheme } from '../ThemeContext.jsx';\r\n+import { Sun, Moon } from 'lucide-react';\r\n+import { Button } from './ui/button.jsx';\r\n+\r\n+const ThemeToggle = () => {\r\n+  const { theme, toggleTheme } = useTheme();\r\n+\r\n+  return (\r\n+    <Button\r\n+      variant=\"ghost\"\r\n+      size=\"icon\"\r\n+      onClick={toggleTheme}\r\n+      aria-label=\"Toggle theme\"\r\n+    >\r\n+      {theme === 'dark' ? <Sun className=\"h-6 w-6\" /> : <Moon className=\"h-6 w-6\" />}\r\n+    </Button>\r\n+  );\r\n+};\r\n+\r\n export default ThemeToggle;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1757145709045,

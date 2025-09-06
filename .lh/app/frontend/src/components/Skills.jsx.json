@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1757147826145,
@@ -20,6 +20,26 @@
                 {
                     "date": 1757150800698,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { skillsSection } from '../data/mockData';\n \n const Skills = () => {\n   return (\n-    <section id=\"skills\" className=\"py-20 bg-secondary text-foreground fade-in-up\">\n+    <section id=\"skills\" className=\"py-20 bg-background text-foreground fade-in-up\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         {/* Header */}\n         <div className=\"text-center mb-16\">\n           <h2 className=\"text-4xl lg:text-5xl font-bold mb-6\">{skillsSection.title}</h2>\n"
+                },
+                {
+                    "date": 1757162237016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n import { skillsSection } from '../data/mockData';\n \n+// Renders the \"What I do\" section with a list of skills and software icons.\n const Skills = () => {\n   return (\n     <section id=\"skills\" className=\"py-20 bg-background text-foreground fade-in-up\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n@@ -13,9 +14,9 @@\n           </p>\n         </div>\n \n         <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-12 items-center\">\n-          {/* Left Side - Skills Description */}\n+          {/* Left column: A descriptive list of key skills. */}\n           <div className=\"space-y-6\">\n             <h3 className=\"text-2xl font-bold text-center lg:text-left text-foreground\">\n               PASSIONATE AI/ML DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK\n             </h3>\n@@ -28,9 +29,9 @@\n               ))}\n             </div>\n           </div>\n \n-          {/* Right Side - Tech Stack Icons */}\n+          {/* Right column: A grid of software and technology icons. */}\n           <div className=\"grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6\">\n             {skillsSection.softwareSkills.map((skill, index) => (\n               <div \n                 key={index}\n"
+                },
+                {
+                    "date": 1757178126501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n           <div className=\"grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6\">\n             {skillsSection.softwareSkills.map((skill, index) => (\n               <div \n                 key={index}\n-                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg hover:bg-muted/80 transition-colors duration-300 hover:scale-105 transform\"\n+                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-105 hover:bg-muted/80\"\n               >\n                 <i className={`${skill.fontAwesomeClassname} text-4xl text-foreground`}></i>\n                 <span className=\"text-sm text-muted-foreground text-center\">{skill.skillName}</span>\n               </div>\n"
+                },
+                {
+                    "date": 1757178209096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n           <div className=\"grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6\">\n             {skillsSection.softwareSkills.map((skill, index) => (\n               <div \n                 key={index}\n-                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:-translate-y-2 hover:scale-105 hover:bg-muted/80\"\n+                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:scale-105 hover:bg-muted/80\"\n               >\n                 <i className={`${skill.fontAwesomeClassname} text-4xl text-foreground`}></i>\n                 <span className=\"text-sm text-muted-foreground text-center\">{skill.skillName}</span>\n               </div>\n"
+                },
+                {
+                    "date": 1757187076970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n           <div className=\"grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6\">\n             {skillsSection.softwareSkills.map((skill, index) => (\n               <div \n                 key={index}\n-                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:scale-105 hover:bg-muted/80\"\n+                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:bg-muted/80 hover-bounce\"\n               >\n                 <i className={`${skill.fontAwesomeClassname} text-4xl text-foreground`}></i>\n                 <span className=\"text-sm text-muted-foreground text-center\">{skill.skillName}</span>\n               </div>\n"
+                },
+                {
+                    "date": 1757187193316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n           <div className=\"grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6\">\n             {skillsSection.softwareSkills.map((skill, index) => (\n               <div \n                 key={index}\n-                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:bg-muted/80 hover-bounce\"\n+                className=\"flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:bg-muted/80 hover-glow\"\n               >\n                 <i className={`${skill.fontAwesomeClassname} text-4xl text-foreground`}></i>\n                 <span className=\"text-sm text-muted-foreground text-center\">{skill.skillName}</span>\n               </div>\n"
                 }
             ],
             "date": 1757147826145,
