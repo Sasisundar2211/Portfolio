@@ -1,0 +1,22 @@
+/* Base styling for individual software skill icons. */
+.skill-icon {
+    font-size: 4rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #4b5563; /* Default color for light mode for better contrast. */
+}
+
+.skill-icon:hover {
+    transform: scale(1.05);
+    color: #111827; /* Darkens the icon on hover in light mode. */
+}
+
+/* Applies a rotating color scheme from Google's palette to the icons in dark mode. */
+.dark .skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */
+.dark .skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */
+.dark .skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */
+.dark .skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */
+
+.dark .skill-icon:hover {
+    /* In dark mode, the hover effect only scales the icon, preserving the color cycle. */
+    transform: scale(1.05);
+}
