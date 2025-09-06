@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1757152412990,
@@ -12,6 +12,18 @@
                 {
                     "date": 1757154685811,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n import { Heart } from 'lucide-react';\n \n const Footer = () => {\n   return (\n-    <footer className=\"bg-black border-t border-gray-800 text-white py-8\">\n+    <footer className=\"bg-background border-t border-border/10 text-foreground py-8\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         <div className=\"text-center\">\n-          <p className=\"text-gray-400 flex items-center justify-center gap-2\">\n+          <p className=\"text-muted-foreground flex items-center justify-center gap-2\">\n             Made with <Heart className=\"w-4 h-4 text-red-500 fill-current\" /> by BSV Sasi Sundar\n           </p>\n-          <p className=\"text-gray-500 text-sm mt-2\">\n+          <p className=\"text-muted-foreground/70 text-sm mt-2\">\n             © 2025 BSV Sasi Sundar. All rights reserved.\n           </p>\n         </div>\n       </div>\n"
+                },
+                {
+                    "date": 1757159041370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <footer className=\"bg-background border-t border-border/10 text-foreground py-8\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         <div className=\"text-center\">\n           <p className=\"text-muted-foreground flex items-center justify-center gap-2\">\n-            Made with <Heart className=\"w-4 h-4 text-red-500 fill-current\" /> by BSV Sasi Sundar\n+            Made with <Heart className=\"w-4 h-4 text-red-500 fill-current\" /> by Sasi Sundar\n           </p>\n           <p className=\"text-muted-foreground/70 text-sm mt-2\">\n             © 2025 BSV Sasi Sundar. All rights reserved.\n           </p>\n"
+                },
+                {
+                    "date": 1757159112464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <footer className=\"bg-background border-t border-border/10 text-foreground py-8\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         <div className=\"text-center\">\n           <p className=\"text-muted-foreground flex items-center justify-center gap-2\">\n-            Made with <Heart className=\"w-4 h-4 text-red-500 fill-current\" /> by Sasi Sundar\n+            Made with Sasi Sundar\n           </p>\n           <p className=\"text-muted-foreground/70 text-sm mt-2\">\n             © 2025 BSV Sasi Sundar. All rights reserved.\n           </p>\n"
+                },
+                {
+                    "date": 1757159118458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <footer className=\"bg-background border-t border-border/10 text-foreground py-8\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         <div className=\"text-center\">\n           <p className=\"text-muted-foreground flex items-center justify-center gap-2\">\n-            Made with Sasi Sundar\n+            Made By Sasi Sundar\n           </p>\n           <p className=\"text-muted-foreground/70 text-sm mt-2\">\n             © 2025 BSV Sasi Sundar. All rights reserved.\n           </p>\n"
                 }
             ],
             "date": 1757152412990,

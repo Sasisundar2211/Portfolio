@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1757147827055,
@@ -20,6 +20,10 @@
                 {
                     "date": 1757151261675,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n                 <div className=\"flex-shrink-0\">\n                   <img \n                     src={school.logo} \n                     alt={school.schoolName}\n-                    className=\"w-20 h-20 object-contain bg-white rounded-lg p-2\"\n+                    className=\"w-20 h-20 object-contain bg-card rounded-lg p-2\"\n                   />\n                 </div>\n \n                 {/* School Details */}\n"
+                },
+                {
+                    "date": 1757160217966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,56 @@\n+import React from 'react';\n+import { educationInfo } from '../data/mockData';\n+\n+const Education = () => {\n+  return (\n+    <section id=\"education\" className=\"py-20 bg-background text-foreground fade-in-up\">\n+      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n+        <div className=\"text-center mb-16\">\n+          <h2 className=\"text-4xl lg:text-5xl font-bold mb-6\">Education</h2>\n+        </div>\n+\n+        <div className=\"space-y-12\">\n+          {educationInfo.schools.map((school, index) => (\n+            <div key={index} className=\"glass-card p-8 rounded-lg\">\n+              <div className=\"flex flex-col md:flex-row items-start md:items-center gap-6\">\n+                {/* School Logo */}\n+                <div className=\"flex-shrink-0\">\n+                  <img \n+                    src={school.logo} \n+                    alt={school.schoolName}\n+                    className=\"w-24 h-24 object-contain bg-card rounded-lg p-2\"\n+                  />\n+                </div>\n+\n+                {/* School Details */}\n+                <div className=\"flex-grow\">\n+                  <div className=\"flex flex-col md:flex-row md:justify-between md:items-start mb-4\">\n+                    <div>\n+                      <h3 className=\"text-2xl font-bold text-foreground mb-2\">{school.schoolName}</h3>\n+                      <h4 className=\"text-lg text-primary font-semibold mb-2\">{school.subHeader}</h4>\n+                    </div>\n+                    <div className=\"text-muted-foreground text-sm md:text-right\">\n+                      {school.duration}\n+                    </div>\n+                  </div>\n+\n+                  <p className=\"text-muted-foreground mb-4\">{school.desc}</p>\n+\n+                  {school.descBullets && school.descBullets.length > 0 && (\n+                    <ul className=\"list-disc list-inside space-y-2 text-muted-foreground\">\n+                      {school.descBullets.map((bullet, bulletIndex) => (\n+                        <li key={bulletIndex} className=\"text-sm\">{bullet}</li>\n+                      ))}\n+                    </ul>\n+                  )}\n+                </div>\n+              </div>\n+            </div>\n+          ))}\n+        </div>\n+      </div>\n+    </section>\n+  );\n+};\n+\n+export default Education;\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1757147827055,
