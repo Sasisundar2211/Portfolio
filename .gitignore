@@ -1,0 +1,13 @@
+# Editor-specific files
+.vscode/
+.idea/
+.history/
+.lh/
+
+# Dependencies
+/node_modules
+/app/frontend/node_modules
+
+# Build output
+/app/frontend/build
+/dist

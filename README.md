@@ -4,7 +4,7 @@ Welcome to the repository for my personal portfolio website. This project is des
 
 The project includes a stunning landing page to welcome visitors and a detailed portfolio page that acts as a comprehensive digital resume.
 
-[![Portfolio Screenshot](app/frontend/public/assets/images/portfoliopage_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)
+[![Portfolio Screenshot](app/frontend//public/assets/images/portfolio_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)
 
 ## ✨ Features
 

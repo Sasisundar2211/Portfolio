@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1757158897474,
@@ -12,6 +12,14 @@
                 {
                     "date": 1757158943474,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,5 +104,5 @@\n This project is open-source and available to everyone.\r\n \r\n ---\r\n \r\n-Made by Sasi Sundar.\r\n+Made with ❤️ by Sasi Sundar.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757160792202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n Welcome to the repository for my personal portfolio website. This project is designed to showcase my skills, projects, and experience as an AI/ML Engineer and Full-Stack Developer. It features a sleek, modern, and responsive design inspired by Apple's design principles, with a focus on a clean user experience.\r\n \r\n The project includes a stunning landing page to welcome visitors and a detailed portfolio page that acts as a comprehensive digital resume.\r\n \r\n-[![Portfolio Screenshot](app/frontend/public/assets/images/portfoliopage_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)\r\n+[![Portfolio Screenshot](app/frontend//public/assets/images/portfoliopage_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)\r\n \r\n ## ✨ Features\r\n \r\n -   **Modern & Responsive Design**: A clean, minimalist UI that looks great on all devices, from mobile phones to desktops.\r\n@@ -104,5 +104,5 @@\n This project is open-source and available to everyone.\r\n \r\n ---\r\n \r\n-Made with ❤️ by Sasi Sundar.\n\\ No newline at end of file\n+Made by Sasi Sundar.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757190311958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n Welcome to the repository for my personal portfolio website. This project is designed to showcase my skills, projects, and experience as an AI/ML Engineer and Full-Stack Developer. It features a sleek, modern, and responsive design inspired by Apple's design principles, with a focus on a clean user experience.\r\n \r\n The project includes a stunning landing page to welcome visitors and a detailed portfolio page that acts as a comprehensive digital resume.\r\n \r\n-[![Portfolio Screenshot](app/frontend//public/assets/images/portfoliopage_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)\r\n+[![Portfolio Screenshot](app/frontend//public/assets/images/portfolio_ss.png)](https://sasi-sundar-portfolio.vercel.app/portfolio)\r\n \r\n ## ✨ Features\r\n \r\n -   **Modern & Responsive Design**: A clean, minimalist UI that looks great on all devices, from mobile phones to desktops.\r\n"
                 }
             ],
             "date": 1757158897474,
