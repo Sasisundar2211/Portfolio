@@ -1,0 +1,28 @@
+.skills-container {
+    /* Add your container styles here */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-icon {
+    font-size: 4rem; /* Or your desired size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Apply Google Colors in a cycle */
+.skill-icon:nth-child(4n + 1) { color: #4285F4; } /* Blue */
+.skill-icon:nth-child(4n + 2) { color: #EA4335; } /* Red */
+.skill-icon:nth-child(4n + 3) { color: #FBBC05; } /* Yellow */
+.skill-icon:nth-child(4n + 4) { color: #34A853; } /* Green */

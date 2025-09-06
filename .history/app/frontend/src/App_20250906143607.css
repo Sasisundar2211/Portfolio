@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Prioritize Apple's system font, then fall back to Inter and other system fonts */
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-background text-foreground;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  @apply bg-background text-foreground;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+/* No changes needed for scrollbar as it can be styled for both or left to default */
+
+/* Glass card styles for both themes */
+.glass-card {
+  border: 1px solid;
+  transition: all 0.3s ease-in-out; /* Smoother transition */
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: hsl(var(--border) / 0.8);
+  @apply dark:bg-card/40 dark:border-border/10;
+}
+
+.glass-card:hover {
+  transform: translateY(-3px); /* Reduced lift */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  @apply dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)];
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Reduced distance */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out; /* Faster animation */
+}
+
+@keyframes scale-in-out {
+  from {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px); /* Reduced float height */
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite; /* Slower float cycle */
+}
+
+/* Hover effects */
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Text gradient */
+.text-gradient {
+  /* Uses google colors from tailwind.config.js */
+  background: linear-gradient(90deg, #34A853, #EA4335, #FBBC05, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient-flow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* iOS/Apple Style Glassmorphism Buttons */
+.glass-button {
+  background: hsl(var(--card) / 0.65);
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border) / 0.1);
+  @apply dark:bg-white/10 dark:border-white/20 dark:text-white;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  font-weight: 500; /* Adjusted for a more native iOS feel */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  /* Uses google colors from tailwind.config.js */
+  background: linear-gradient(90deg, transparent, #34A853, #EA4335, #FBBC05, #4285F4, transparent);
+  opacity: 0.2;
+  transition: left 0.5s;
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  @apply dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)];
+}
+
+.glass-button:hover:before {
+  left: 100%;
+}
+
+.glass-button:active {
+  transform: translateY(1px) scale(0.98); /* More "squishy" press effect */
+  transition: transform 0.05s;
+}
+
+.glass-button-primary {
+  /* Google Blue for primary actions */
+  background: rgba(26, 147, 65, 0.9); /* Darker green for AA contrast on white text */
+  border: 1px solid rgba(26, 147, 65, 1);
+  color: white;
+}
+
+.glass-button-primary:hover {
+  background: rgba(26, 147, 65, 1);
+  border-color: rgba(26, 147, 65, 1);
+}
+
+/* Smooth scrolling enhancement */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Apple-style blur effects */
+.blur-bg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Modern gradient backgrounds */
+.gradient-bg {
+  /* Light mode gradient */
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  @apply dark:bg-gradient-to-r dark:from-[#1e1e1e] dark:to-[#2d2d30];
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* Google Color Border Animation */
+.google-border-glow {
+  border: 3px solid;
+  animation: google-glow 12s linear infinite; /* Slower glow cycle */
+}
+
+@keyframes google-glow {
+    0% {
+        border-color: #34A853; /* google-green */
+        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
+    }
+    25% {
+        border-color: hsl(var(--destructive));
+        box-shadow: 0 0 20px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive));
+    }
+    50% {
+        border-color: #FBBC05; /* google-yellow */
+        box-shadow: 0 0 20px #FBBC05, 0 0 30px #FBBC05;
+    }
+    75% {
+        border-color: hsl(var(--primary));
+        box-shadow: 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+    }
+    100% {
+        border-color: #34A853; /* google-green */
+        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
+    }
+}
+
+/* Social Icon Hover Effects */
+.social-icon-hover-github:hover { color: #ffffff; }
+.social-icon-hover-gitlab:hover { color: #FC6D26; }
+.social-icon-hover-linkedin:hover { color: #0A66C2; }
+.social-icon-hover-gmail:hover { color: #EA4335; }
+.social-icon-hover-whatsapp:hover { color: #25D366; }
+.social-icon-hover-instagram:hover { color: #E4405F; }
+.social-icon-hover-twitter:hover { color: #1DA1F2; }
+.social-icon-hover-medium:hover { color: #ffffff; }
+.social-icon-hover-stackoverflow:hover { color: #F58025; }
+.social-icon-hover-kaggle:hover { color: #20BEFF; }
+
+/* Light mode specific hover colors */
+body:not(.dark) .social-icon-hover-github:hover { color: #181717; }
+body:not(.dark) .social-icon-hover-medium:hover { color: #121212; }
+
+/* Dark mode specific hover colors */
+.dark .social-icon-hover-github:hover { color: #ffffff; }
+.dark .social-icon-hover-medium:hover { color: #ffffff; }
+
+/* Theme Toggle Animation */
+.theme-icon-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 24px; /* h-6 */
+    height: 24px; /* w-6 */
+}
+
+.theme-icon-wrapper > svg {
+    position: absolute;
+    animation: icon-fade-in 0.5s forwards;
+}
+
+@keyframes icon-fade-in {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Header Navigation Link Styles */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    @apply text-gray-600 dark:text-gray-300;
+}
+
+.nav-link:hover {
+    @apply text-black dark:text-white;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* New gradient for nav links */
+    background: linear-gradient(90deg, #34A853, #EA4335, #FBBC05, #4285F4);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}

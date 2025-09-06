@@ -1,0 +1,34 @@
+{
+    "sourceFile": "app/frontend/src/components/ThemeToggle.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1757145709045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757145796318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\r\n-import { useTheme } from '../context/ThemeContext';\r\n+import { useTheme } from '../context/ThemeContext.js';\r\n import { Sun, Moon } from 'lucide-react';\r\n import { Button } from './ui/button';\r\n \r\n const ThemeToggle = () => {\r\n"
+                },
+                {
+                    "date": 1757145817304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\r\n-import { useTheme } from '../context/ThemeContext.js';\r\n+import { useTheme } from '../context/ThemeContext';\r\n import { Sun, Moon } from 'lucide-react';\r\n import { Button } from './ui/button';\r\n \r\n const ThemeToggle = () => {\r\n"
+                },
+                {
+                    "date": 1757146013053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const ThemeToggle = () => {\n     const { theme, toggleTheme } = useTheme();\n \n     return (\n-        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-white\">\n+        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white\">\n             {theme === 'dark' ? <Sun className=\"h-6 w-6\" /> : <Moon className=\"h-6 w-6\" />}\n         </Button>\n     );\n };\n"
+                },
+                {
+                    "date": 1757146250950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,19 @@\n-import React from 'react';\r\n-import { useTheme } from '../context/ThemeContext';\r\n-import { Sun, Moon } from 'lucide-react';\r\n-import { Button } from './ui/button';\r\n-\r\n-const ThemeToggle = () => {\r\n-    const { theme, toggleTheme } = useTheme();\r\n-\r\n-    return (\r\n-        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white\">\n-            {theme === 'dark' ? <Sun className=\"h-6 w-6\" /> : <Moon className=\"h-6 w-6\" />}\r\n-        </Button>\r\n-    );\r\n-};\r\n-\r\n+import React from 'react';\n+import { useTheme } from '../ThemeContext';\n+import { Sun, Moon } from 'lucide-react';\n+import { Button } from './ui/button';\n+\n+const ThemeToggle = () => {\n+    const { theme, toggleTheme } = useTheme();\n+\n+    return (\n+        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-gray-800 dark:text-white relative w-9 h-9\">\n+            <div className=\"theme-icon-wrapper\">\n+                {/* The key prop ensures React re-renders the icon, triggering the animation */}\n+                {theme === 'dark' ? <Sun key=\"sun\" className=\"h-6 w-6\" /> : <Moon key=\"moon\" className=\"h-6 w-6\" />}\n+            </div>\n+        </Button>\n+    );\n+};\n+\n export default ThemeToggle;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1757145709045,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport { useTheme } from '../context/ThemeContext';\r\nimport { Sun, Moon } from 'lucide-react';\r\nimport { Button } from './ui/button';\r\n\r\nconst ThemeToggle = () => {\r\n    const { theme, toggleTheme } = useTheme();\r\n\r\n    return (\r\n        <Button variant=\"ghost\" size=\"sm\" onClick={toggleTheme} className=\"text-white\">\r\n            {theme === 'dark' ? <Sun className=\"h-6 w-6\" /> : <Moon className=\"h-6 w-6\" />}\r\n        </Button>\r\n    );\r\n};\r\n\r\nexport default ThemeToggle;"
+        }
+    ]
+}
