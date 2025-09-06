@@ -1,0 +1,396 @@
+/* Import the Inter font from Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* Enables smooth scrolling for anchor links. */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-background text-foreground;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+body.dark {
+  background-color: #000000;
+  background-image: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 40%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Animation for the main content to fade in after the loader disappears. */
+.app-fade-in {
+  animation: content-fade-in 1.5s ease-in-out;
+}
+
+@keyframes content-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Base style for glassmorphism card elements. */
+.glass-card {
+  border: 1px solid hsl(var(--border) / 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  @apply dark:bg-card/50 dark:border-white/10;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.15);
+  border-color: hsl(var(--border) / 0.3);
+  @apply dark:shadow-[0_12px_24px_-12px_rgba(0,0,0,0.3)] dark:border-white/15;
+}
+
+/* A simple fade-in-from-bottom animation. */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px); /* Even more subtle starting position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slightly faster animation */
+}
+
+/* A simple scale-in animation. */
+@keyframes scale-in-out {
+  from {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* A subtle floating animation. */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* A reusable subtle glow animation on hover. */
+.hover-glow:hover {
+  box-shadow: 0 0 15px 0 hsl(var(--primary) / 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* A reusable animated gradient border effect on hover. */
+.hover-border-gradient {
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element stays within the card bounds */
+}
+
+.hover-border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit; /* Matches the parent's border-radius */
+  padding: 2px; /* The thickness of the border */
+  background: linear-gradient(120deg, hsl(var(--primary) / 0.5), hsl(var(--destructive) / 0.5), hsl(var(--primary) / 0.5));
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, background-position 0.4s ease-in-out;
+}
+
+.hover-border-gradient:hover::before {
+  opacity: 1;
+  animation: move-gradient 4s linear infinite;
+}
+
+@keyframes move-gradient {
+  to {
+    background-position: 200% 200%;
+  }
+}
+
+/* A reusable text gradient class using Google's color palette. */
+.text-gradient {
+  background: linear-gradient(90deg, #34A853, #EA4335, #FBBC05, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Overrides the text gradient in dark mode to be a solid color for a premium look. */
+.dark .text-gradient {
+  background: hsl(var(--foreground));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animates the background position of the gradient to create a flowing effect. */
+@keyframes gradient-flow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Specific gradient and glow effect for the hero section title on the landing page. */
+.hero-title-gradient {
+  background: linear-gradient(90deg, #a0e9ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hero-glow 4s ease-in-out infinite;
+}
+
+@keyframes hero-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(160, 233, 255, 0.1), 0 0 20px rgba(160, 233, 255, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(160, 233, 255, 0.2), 0 0 30px rgba(160, 233, 255, 0.15);
+  }
+}
+
+
+/* Base style for glassmorphism buttons, inspired by iOS. */
+.glass-button {
+  background: hsl(var(--card) / 0.5);
+  color: hsl(var(--foreground));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply dark:bg-white/5 dark:border-white/10 dark:text-white;
+
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 9999px; /* Creates a pill shape */
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button:hover {
+  transform: scale(1.02); /* A very subtle scale effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  background: hsl(var(--card) / 0.8); /* Brighten background on hover */
+  @apply dark:shadow-[0_5px_15px_rgba(0,0,0,0.2)] dark:border-white/15;
+}
+
+/* A subtle "squishy" effect when the button is pressed. */
+.glass-button:active {
+  transform: translateY(1px) scale(0.98);
+  transition: transform 0.05s;
+}
+
+/* Primary action button style, using Google Blue. */
+.glass-button-primary {
+  background: #4285F4;
+  border: 1px solid #4285F4;
+  color: white;
+}
+
+.glass-button-primary:hover {
+  background: #5a95f5;
+  border-color: #5a95f5;
+}
+
+/* A utility class for applying a backdrop blur effect. */
+.blur-bg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* A utility class for gradient backgrounds, with different styles for light and dark modes. */
+.gradient-bg {
+  background: hsl(var(--background));
+  @apply dark:bg-background;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* A rotating border glow animation using Google's color palette. */
+.google-border-glow {
+  border: 3px solid;
+  animation: google-glow 12s linear infinite;
+}
+
+@keyframes google-glow {
+    0% {
+        border-color: #34A853;
+        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
+    }
+    25% {
+        border-color: hsl(var(--destructive));
+        box-shadow: 0 0 20px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive));
+    }
+    50% {
+        border-color: #FBBC05;
+        box-shadow: 0 0 20px #FBBC05, 0 0 30px #FBBC05;
+    }
+    75% {
+        border-color: hsl(var(--primary));
+        box-shadow: 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+    }
+    100% {
+        border-color: #34A853;
+        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
+    }
+}
+
+/* Defines hover colors for each social media icon. */
+.social-icon-hover-github:hover { color: #ffffff; }
+.social-icon-hover-gitlab:hover { color: #FC6D26; }
+.social-icon-hover-linkedin:hover { color: #0A66C2; }
+.social-icon-hover-gmail:hover { color: #EA4335; }
+.social-icon-hover-whatsapp:hover { color: #25D366; }
+.social-icon-hover-instagram:hover { color: #E4405F; }
+.social-icon-hover-twitter:hover { color: #1DA1F2; }
+.social-icon-hover-medium:hover { color: #ffffff; }
+.social-icon-hover-stackoverflow:hover { color: #F58025; }
+.social-icon-hover-kaggle:hover { color: #20BEFF; }
+
+body:not(.dark) .social-icon-hover-github:hover { color: #181717; }
+body:not(.dark) .social-icon-hover-medium:hover { color: #121212; }
+
+.dark .social-icon-hover-github:hover { color: #ffffff; }
+.dark .social-icon-hover-medium:hover { color: #ffffff; }
+
+/* Wrapper for the theme toggle icons to manage animations. */
+.theme-icon-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.theme-icon-wrapper > svg {
+    position: absolute;
+    animation: icon-fade-in 0.5s forwards;
+}
+
+/* A fade-and-rotate animation for the theme toggle icons. */
+@keyframes icon-fade-in {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Styling for the main navigation links in the header. */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    @apply text-gray-600 dark:text-gray-300;
+}
+
+.nav-link:hover {
+    @apply text-black dark:text-white;
+}
+
+/* The animated underline that appears on hover. */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #34A853, #EA4335, #FBBC05, #4285F4);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Subtle dot pattern for the parallax background effect. */
+.parallax-bg {
+    background-image: radial-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-attachment: fixed; /* Fallback for non-JS users */
+}
+
+/* Accessibility: "Skip to Content" Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px 12px;
+  z-index: 10001; /* Must be higher than the header */
+  transition: top 0.3s ease-in-out;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}

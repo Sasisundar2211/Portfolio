@@ -1,0 +1,12 @@
+/* Styling for the animated proficiency progress bars, inspired by iOS UI. */
+.skill-bar-progress {
+    background: hsl(var(--primary));
+    height: 8px;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

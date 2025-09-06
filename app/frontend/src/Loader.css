@@ -1,0 +1,112 @@
+/* Styles for the full-screen loading animation. */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(var(--background));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* To stack spinner and signature */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.75s ease-out, visibility 0.75s ease-out;
+}
+
+/* The main spinner element, using Google Blue. */
+.loader-logo {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #4285F4; /* Google Blue */
+    animation: spin 1.2s ease-in-out infinite;
+    position: relative;
+}
+
+/* Class to hide the spinner */
+.loader-logo.hidden {
+    opacity: 0;
+}
+
+/* A secondary spinner layer using pseudo-elements for a multi-color effect. */
+.loader-logo::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #EA4335; /* Google Red */
+    animation: spin 1.7s ease-in-out infinite;
+}
+
+/* A third spinner layer. */
+.loader-logo::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #FBBC05; /* Google Yellow */
+    animation: spin 2.2s ease-in-out infinite;
+}
+
+/* The fourth spinner layer to complete the Google color theme. */
+.loader-logo > div {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #34A853; /* Google Green */
+    animation: spin 2.7s ease-in-out infinite;
+}
+
+/* Styles for the name tag under the loader */
+.loader-name-tag {
+  margin-top: 2rem;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* SVG signature container */
+.loader-signature-svg {
+  width: 15rem; /* Adjust size as needed */
+  height: auto;
+  margin-top: 1.5rem;
+}
+
+/* The path for the signature that will be animated */
+.loader-signature-path {
+  stroke: hsl(var(--muted-foreground));
+  stroke-width: 5;
+  fill: none;
+  stroke-dasharray: 1500; /* A value larger than the path's length */
+  stroke-dashoffset: 1500;
+  animation: draw-loader-signature 2s ease-out 0.5s forwards;
+}
+
+@keyframes draw-loader-signature {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Class to trigger the fade-out animation. */
+.loader-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
