@@ -1,124 +1,70 @@
-Sasi's Portfolio 🌟
+# Getting Started with Create React App
 
-A Modern AI/ML & Full-Stack Developer Portfolio
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Welcome to the repository of Sasi Sundar’s personal portfolio website — a cutting-edge, interactive, and responsive platform designed to showcase my skills, projects, and experience as an AI/ML Engineer and Full-Stack Developer.
+## Available Scripts
 
-The portfolio embodies Apple-inspired design principles — clean, minimal, and highly intuitive — with seamless animations and smooth transitions for a premium user experience.
+In the project directory, you can run:
 
-🚀 Key Highlights
+### `npm start`
 
-🎨 Modern & Responsive UI → A sleek, mobile-first design that adapts beautifully to all devices.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-🧩 Component-Driven Architecture → Built with React for performance, scalability, and maintainability.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-🌓 Dark & Light Themes → Elegant theme switcher with buttery-smooth transitions.
+### `npm test`
 
-⚡ Interactive & Dynamic → Smooth animations, hover effects, and glassmorphism-inspired aesthetics.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-🧠 AI-Powered Showcase → Highlights ML projects, intelligent automations, and real-world AI applications.
+### `npm run build`
 
-📬 Functional Contact Form → Integrated with EmailJS for direct, secure messaging.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-🔝 Back-to-Top & Quick Nav → Hassle-free navigation across longer portfolio pages.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-🛠 Tech Stack
-Frontend
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Framework: React.js
- ⚛️
+### `npm run eject`
 
-Styling: Tailwind CSS
- 🎨
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Icons: Lucide React
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Routing: React Router
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Email Integration: EmailJS
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Backend
+## Learn More
 
-Framework: FastAPI
- ⚡
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Database: MongoDB
- + Motor
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Environment Management: python-dotenv
+### Code Splitting
 
-📌 Features Breakdown
-Feature	Description
-Landing Page	An elegant, minimal homepage designed to leave a lasting first impression.
-Portfolio Page	A dynamic, resume-like section showcasing skills, projects, and achievements.
-AI/ML Projects	Dedicated space to highlight cutting-edge AI, automation, and ML applications.
-Achievements Section	Showcasing certifications, hackathon wins, and career milestones.
-Responsive Layout	Optimized for desktop, tablet, and mobile.
-SEO & Performance	Blazing-fast loading speeds with optimized assets.
-⚡ Getting Started
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Follow these steps to set up the project locally:
+### Analyzing the Bundle Size
 
-1. Clone the Repository
-git clone https://github.com/your-username/sasifolio.git
-cd sasifolio
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-2. Setup Frontend
-cd app/frontend
-npm install
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Configure Environment Variables → Create a .env file inside app/frontend:
+### Advanced Configuration
 
-REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
-Start the development server:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-npm start
+### `npm run build` fails to minify
 
-
-Your frontend runs at http://localhost:3000
- 🚀
-
-3. Setup Backend
-cd app/backend
-pip install -r requirements.txt
-
-
-Create a .env file inside app/backend:
-
-MONGO_URL=your_mongodb_connection_string
-DB_NAME=your_database_name
-CORS_ORIGINS=http://localhost:3000
-
-
-Start the FastAPI server:
-
-uvicorn server:app --reload
-
-
-Your backend runs at http://127.0.0.1:8000
- ⚡
-
-🤝 Contributions
-
-Contributions, feature requests, and issue reports are always welcome!
-Check out the Issues
- page to get started.
-
-📄 License
-
-This project is open-source and available to everyone under the MIT License.
-
-🌟 Let's Connect
-
-🔗 Portfolio: sasi-sundar-portfolio.vercel.app
-
-💼 LinkedIn: linkedin.com/in/sasi-sundar
-
-🐙 GitHub: github.com/sasi-sundar
-
-📧 Email: sasisundhar2211@gmail.com
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
