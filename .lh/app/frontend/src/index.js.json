@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/frontend/src/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1757236699289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757237341022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from \"react\";\n+import ReactDOM from \"react-dom/client\";\n+import \"./index.css\";\n+import App from \"./App\";\n+\n+const root = ReactDOM.createRoot(document.getElementById(\"root\"));\n+root.render(\n+  <React.StrictMode>\n+    <App />\n+  </React.StrictMode>\n+);\n"
+                }
+            ],
+            "date": 1757236699289,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport { BrowserRouter } from \"react-router-dom\";\nimport \"./index.css\";\nimport App from \"./App\";\n\nconst root = ReactDOM.createRoot(document.getElementById(\"root\"));\nroot.render(\n  <React.StrictMode>\n    <BrowserRouter>\n      <App />\n    </BrowserRouter>\n  </React.StrictMode>\n);\n"
+        }
+    ]
+}
