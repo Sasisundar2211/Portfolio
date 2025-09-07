@@ -28,11 +28,11 @@ jobs:
           npm install
           npm run build
         
-      # This step uploads the contents of the 'dist' folder (created by the build)
+      # This step uploads the contents of the 'build' folder (created by the build)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './app/frontend/dist'
+          path: './app/frontend/build'
 
   # This job handles the deployment
   deploy:
