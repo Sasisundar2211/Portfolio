@@ -5,9 +5,11 @@
 .lh/
 
 # Dependencies
-/node_modules
-/app/frontend/node_modules
+node_modules/
+app/frontend/node_modules/
 
 # Build output
-/app/frontend/build
-/dist
+app/frontend/build/
+dist/
+
+.env
