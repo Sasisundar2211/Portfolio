@@ -23,15 +23,6 @@ const Greeting = () => {
     }
   };
 
-  // Triggers the download of the resume file.
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = greeting.resumeLink;
-    link.download = './public/assets/Resume/BSV_Sasi_Sundar_AIML_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section id="greeting" className="min-h-screen flex items-center justify-center gradient-bg text-foreground pt-20">
@@ -59,7 +50,7 @@ const Greeting = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit my ${platform} profile`}
-                  className={`p-3 bg-background rounded-lg transition-all duration-300 ease-out transform social-icon-hover-${platform} hover:bg-muted/40 hover-glow`}
+                  className={`p-3 rounded-lg transition-colors duration-300 ease-in-out text-muted-foreground hover:text-foreground`}
                 >
                   {getSocialIcon(platform)}
                 </a>
@@ -69,36 +60,21 @@ const Greeting = () => {
 
           {/* Buttons for contacting and downloading the resume. */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button 
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-              className="glass-button glass-button-primary px-8 py-4 text-lg"
-            >
-              Contact Me
-            </button>
-            <button 
-              onClick={handleResumeDownload}
-              className="glass-button px-8 py-4 text-lg"
-            >
-              Download Resume
-            </button>
+            <Button asChild size="lg">
+              <a href="#contact">Contact Me</a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href={greeting.resumeLink} download>Download Resume</a>
+            </Button>
           </div>
         </div>
 
         {/* Right side content: Animated profile picture illustration. */}
         <div className="flex justify-center lg:justify-end">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-            <div className="w-full h-full glass-card flex items-center justify-center p-2 google-border-glow rounded-full">
-              <img src="/assets/images/profile_image.jpg" alt="Profile" className="w-full h-full object-cover rounded-full" />
-            </div>
-            {/* Decorative floating elements for visual flair. */}
-            <div className="absolute -top-4 -right-4 w-12 h-12 sm:-top-6 sm:-right-6 sm:w-14 sm:h-14 glass-card rounded-full flex items-center justify-center animate-bounce delay-100">
-              <span className="text-xl sm:text-2xl">⚡</span>
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-10 h-10 sm:-bottom-6 sm:-left-6 sm:w-12 sm:h-12 glass-card rounded-full flex items-center justify-center animate-bounce delay-300">
-              <span className="text-lg sm:text-xl">🎯</span>
-            </div>
-            <div className="absolute top-1/2 -left-6 w-7 h-7 sm:top-1/2 sm:-left-10 sm:w-8 sm:h-8 glass-card rounded-full flex items-center justify-center animate-bounce delay-500">
-              <span className="text-xs sm:text-sm">✨</span>
+          <div className="profile-image-container">
+            <div className="glowing-circle"></div>
+            <div className="profile-image-wrapper">
+              <img src="/assets/images/profile_image.jpg" alt="Profile" className="profile-image" />
             </div>
           </div>
         </div>

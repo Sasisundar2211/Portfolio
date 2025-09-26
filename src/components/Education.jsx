@@ -12,7 +12,7 @@ const Education = () => {
 
         <div className="space-y-16 md:space-y-20">
           {educationInfo.schools.map((school, index) => (
-            <div key={index} className="glass-card p-8 rounded-lg hover-border-gradient">
+            <div key={index} className="p-8 rounded-lg border border-border bg-card shadow-sm">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 {/* Container for the school's logo. */}
                 <div className="flex-shrink-0">

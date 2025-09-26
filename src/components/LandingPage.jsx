@@ -160,14 +160,7 @@ const LandingPage = () => {
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
             <h1 className="text-6xl lg:text-8xl font-extrabold mb-6 leading-tight">
-              <span style={{
-                background: 'linear-gradient(90deg, #4285F4 0%, #34A853 25%, #FBBC05 50%, #EA4335 75%, #4285F4 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                color: 'transparent',
-                display: 'inline-block'
-              }}> 
+              <span className="text-gradient">
                 Sasi Sundar | Portfolio
               </span>
             </h1>

@@ -175,24 +175,6 @@ code {
     100%{background-position:0% 50%}
 }
 
-/* Specific gradient and glow effect for the hero section title on the landing page. */
-.hero-title-gradient {
-  background: linear-gradient(90deg, #a0e9ff 0%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: hero-glow 4s ease-in-out infinite;
-}
-
-@keyframes hero-glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(160, 233, 255, 0.1), 0 0 20px rgba(160, 233, 255, 0.1);
-  }
-  50% {
-    text-shadow: 0 0 15px rgba(160, 233, 255, 0.2), 0 0 30px rgba(160, 233, 255, 0.15);
-  }
-}
-
 
 /* Base style for glassmorphism buttons, inspired by iOS. */
 .glass-button {
@@ -269,35 +251,6 @@ code {
   }
 }
 
-/* A rotating border glow animation using Google's color palette. */
-.google-border-glow {
-  border: 3px solid;
-  animation: google-glow 12s linear infinite;
-}
-
-@keyframes google-glow {
-    0% {
-        border-color: #34A853;
-        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
-    }
-    25% {
-        border-color: hsl(var(--destructive));
-        box-shadow: 0 0 20px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive));
-    }
-    50% {
-        border-color: #FBBC05;
-        box-shadow: 0 0 20px #FBBC05, 0 0 30px #FBBC05;
-    }
-    75% {
-        border-color: hsl(var(--primary));
-        box-shadow: 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
-    }
-    100% {
-        border-color: #34A853;
-        box-shadow: 0 0 20px #34A853, 0 0 30px #34A853;
-    }
-}
-
 /* Defines hover colors for each social media icon. */
 .social-icon-hover-github:hover { color: #ffffff; }
 .social-icon-hover-gitlab:hover { color: #FC6D26; }
@@ -341,35 +294,7 @@ body:not(.dark) .social-icon-hover-medium:hover { color: #121212; }
     }
 }
 
-/* Styling for the main navigation links in the header. */
-.nav-link {
-    position: relative;
-    padding-bottom: 4px;
-    transition: color 0.3s ease;
-    @apply text-gray-600 dark:text-gray-300;
-}
 
-.nav-link:hover {
-    @apply text-black dark:text-white;
-}
-
-/* The animated underline that appears on hover. */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #34A853, #EA4335, #FBBC05, #4285F4);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-}
-
-.nav-link:hover::after {
-    transform: scaleX(1);
-}
 
 /* Subtle dot pattern for the parallax background effect. */
 .parallax-bg {
@@ -393,4 +318,61 @@ body:not(.dark) .social-icon-hover-medium:hover { color: #121212; }
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Profile Image Glowing Ring Effect */
+.profile-image-container {
+  position: relative;
+  width: 350px; /* Adjust size as needed */
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowing-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  animation: google-glow-colors 8s linear infinite;
+}
+
+@keyframes google-glow-colors {
+  0%, 100% {
+    border-color: #4285F4;
+    box-shadow: 0 0 30px #4285F4;
+  }
+  25% {
+    border-color: #EA4335;
+    box-shadow: 0 0 30px #EA4335;
+  }
+  50% {
+    border-color: #FBBC05;
+    box-shadow: 0 0 30px #FBBC05;
+  }
+  75% {
+    border-color: #34A853;
+    box-shadow: 0 0 30px #34A853;
+  }
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: calc(100% - 16px); /* Creates space for the ring */
+  height: calc(100% - 16px);
+  border-radius: 50%;
+  background: #000; /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* This will crop the image */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }

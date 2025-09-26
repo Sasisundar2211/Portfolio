@@ -66,11 +66,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${
-          isScrolled 
-            ? 'bg-background/70 backdrop-blur-xl shadow-md'
-            : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-card shadow-md"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -90,7 +86,7 @@ const Header = () => {
                 <a
                   key={link.name}
                   href={link.url}
-                  className="nav-link font-medium"
+                  className="font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.name}
                 </a>

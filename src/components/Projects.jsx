@@ -14,7 +14,7 @@ const Projects = () => {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">Open Source Projects</h2>
             <Button 
               asChild
-              className="glass-button glass-button-primary px-8 py-3 text-lg"
+              size="lg"
             >
               <a 
                 href="https://github.com/Sasisundar2211" 
@@ -39,7 +39,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {bigProjects.projects.map((project, index) => (
-            <div key={index} className="glass-card overflow-hidden hover-glow">
+            <div key={index} className="border border-border bg-card shadow-sm rounded-lg overflow-hidden">
               {/* Project preview image. */}
               <div className="aspect-video bg-muted flex items-center justify-center">
                 <img 
@@ -59,7 +59,7 @@ const Projects = () => {
                   {project.techStack.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
-                      className="px-4 py-2 bg-muted text-muted-foreground text-sm rounded-full border border-border backdrop-blur-sm transition-transform duration-200 hover:scale-105"
+                      className="px-3 py-1 bg-secondary text-secondary-foreground text-xs rounded-full"
                     >
                       {tech}
                     </span>
@@ -69,16 +69,18 @@ const Projects = () => {
                 {/* Links to the live demo or source code. */}
                 <div className="flex flex-wrap gap-3">
                   {project.footerLink.map((link, linkIndex) => (
-                    <a
-                      key={linkIndex}
-                      href={link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="glass-button px-6 py-3 text-sm flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      {link.name}
-                    </a>
+                    <Button asChild variant="outline" size="sm">
+                      <a
+                        key={linkIndex}
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {link.name}
+                      </a>
+                    </Button>
                   ))}
                 </div>
               </div>
