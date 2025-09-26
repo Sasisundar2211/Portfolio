@@ -182,6 +182,16 @@ export const achievementSection = {
   subtitle: "Achievements, certifications, and research.",
   achievementsCards: [
     {
+      title: "Gen AI Exchange Hackathon - GDG at Vignans",
+      image: "/assets/images/GDG hackathon.webp",
+      footerLink: [{ name: "View Certificate", url: "/assets/certificates/GDG hackathon vignan.pdf" }]
+    },
+    {
+      title: "Google Cloud Security Summit",
+      image: "/assets/images/google css.png",
+      footerLink: [{ name: "View Certificate", url: "/assets/certificates/google Cloud Security summit.pdf" }]
+    },
+    {
       title: "AI-ML Internship – Bharatversity (2025)",
       image: "/assets/images/BV intern.png",
       footerLink: [{ name: "View Certificate", url: "/assets/certificates/BharathVersity.pdf" }]

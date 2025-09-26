@@ -99,7 +99,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={platform}
-                    className={`p-3 bg-muted/40 rounded-lg text-muted-foreground hover:text-foreground transition-all duration-300 ease-out transform hover:scale-110 social-icon-hover-${platform}`}
+                    className={`p-3 rounded-lg text-muted-foreground hover:text-foreground transition-colors duration-300 ease-in-out`}
                   >{getSocialIcon(platform)}</a>
                 );
               })}
@@ -107,14 +107,14 @@ const Contact = () => {
           </div>
 
           {/* Right Side: Contact Form */}
-          <div className="glass-card p-8 lg:p-12 rounded-lg">
+          <div className="p-8 lg:p-12 rounded-lg border border-border bg-card shadow-sm">
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <input type="text" name="from_name" placeholder="Your Name" required className="w-full p-3 bg-muted/40 rounded-lg border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all" />
-                <input type="email" name="from_email" placeholder="Your Email" required className="w-full p-3 bg-muted/40 rounded-lg border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all" />
+                <input type="text" name="from_name" placeholder="Your Name" required className="w-full p-3 bg-background rounded-lg border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all" />
+                <input type="email" name="from_email" placeholder="Your Email" required className="w-full p-3 bg-background rounded-lg border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all" />
               </div>
               <textarea name="message" placeholder="Your Message" rows="5" required className="w-full p-3 bg-muted/40 rounded-lg border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"></textarea>
-              <Button type="submit" size="lg" className="glass-button glass-button-primary w-full" disabled={isSending}>
+              <Button type="submit" size="lg" className="w-full" disabled={isSending}>
                 {isSending ? (
                   <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</>
                 ) : "Send Message"}

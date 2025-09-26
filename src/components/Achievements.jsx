@@ -17,7 +17,7 @@ const Achievements = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievementSection.achievementsCards.map((achievement, index) => (
-            <div key={index} className="glass-card rounded-lg overflow-hidden hover-glow">
+            <div key={index} className="border border-border bg-card shadow-sm rounded-lg overflow-hidden">
               {/* Container for the achievement/certificate image. */}
               <div className="aspect-square bg-card flex items-center justify-center p-4">
                 <img 
@@ -41,7 +41,6 @@ const Achievements = () => {
                       asChild
                       variant="outline"
                       size="sm"
-                      className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-xs"
                     >
                       <a 
                         href={link.url} 

@@ -35,7 +35,7 @@ const Skills = () => {
             {skillsSection.softwareSkills.map((skill, index) => (
               <div 
                 key={index}
-                className="flex flex-col items-center space-y-2 p-4 bg-muted/40 rounded-lg transition-all duration-300 ease-out transform hover:bg-muted/80 hover-glow"
+                className="flex flex-col items-center space-y-2 p-4 border border-border rounded-lg transition-colors duration-300 ease-in-out hover:bg-accent"
               >
                 <i className={`${skill.fontAwesomeClassname} text-4xl text-foreground`}></i>
                 <span className="text-sm text-muted-foreground text-center">{skill.skillName}</span>
