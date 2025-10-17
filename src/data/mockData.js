@@ -230,6 +230,21 @@ export const achievementSection = {
       title: "AI Fundamentals – TechSaksham",
       image: "/assets/images/AICTE.png",
       footerLink: [{ name: "View Certificate", url: "/assets/certificates/AICTE intern cert.pdf" }]
+    },
+    {
+      title: "AI Fluency Certificate",
+      image: "/assets/images/anthropic.png",
+      footerLink: [{ name: "View Certificate", url: "/assets/certificates/AI Fluency Certificate.pdf" }]
+    },
+    {
+      title: "HWI-Devnovate",
+      image: "/assets/images/hackwithindia_logo.jpg",
+      footerLink: [{ name: "View Certificate", url: "/assets/certificates/HWI-Devnovate.png" }]
+    },
+    {
+      title: "Code vipaasana",
+      image: "/assets/images/code_vipassana_logo.jpg",
+      footerLink: [{ name: "View Certificate", url: "/assets/certificates/Code vipaasana.pdf" }]
     }
   
   ],
