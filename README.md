@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome — this repository contains my personal portfolio website: a polished, responsive showcase of my projects, skills, and contact information. It's designed to present my work clearly and professionally to recruiters, collaborators, and anyone interested in what I build.
 
-## Available Scripts
+[![Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](#live-demo) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license) [![Languages](https://img.shields.io/github/languages/top/Sasisundar2211/Portfolio?logo=github)](https://github.com/Sasisundar2211/Portfolio)
 
-In the project directory, you can run:
+Table of contents
+- About
+- Features
+- Tech stack
+- Live demo
+- Getting started
+- Project structure
+- Customization
+- Deployment
+- Contributing
+- License
+- Contact
 
-### `npm start`
+About
+This repository is the source for my personal portfolio website. It highlights selected projects, summarizes my technical skills, and provides an easy way to contact me. It is intended to be lightweight, accessible, and mobile-first.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Features
+- Clean, modern responsive design
+- Project gallery with links to code and live demos
+- Skills section with categories and proficiency indicators
+- Resume (downloadable) and contact form / mailto link
+- SEO-friendly meta tags and accessible markup
+- Lightweight and fast (optimized assets and minimal dependencies)
+- Easy to customize and deploy (instructions below)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tech stack
+- HTML5, CSS3 (or a preprocessor like SASS if used)
+- JavaScript (vanilla or framework — adjust here based on repo)
+- Optional: React / Next.js / Vue.js (if this site uses a framework)
+- Build tools: npm / yarn, bundler (Webpack, Vite, or similar)
+- Deployment targets: GitHub Pages, Netlify, Vercel
 
-### `npm test`
+Live demo
+(If you have a live URL, replace the placeholder)
+Live: https://Sasisundar2211.github.io/Portfolio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Getting started (quick)
+1. Clone the repo
+   git clone https://github.com/Sasisundar2211/Portfolio.git
+2. Enter the project directory
+   cd Portfolio
+3. Install dependencies (if applicable)
+   npm install
+4. Run the dev server
+   npm run dev
+5. Build for production
+   npm run build
+6. Preview production build locally (if available)
+   npm run serve
 
-### `npm run build`
+Project structure (example)
+- public/               — static files and assets (images, favicon)
+- src/                  — source files (HTML / JS / styles / components)
+  - assets/             — images, icons, fonts
+  - components/         — reusable UI pieces (header, footer, project card)
+  - styles/             — CSS / SASS files
+  - index.html          — main HTML page (or entry file for framework)
+- package.json          — scripts and dependencies
+- README.md             — this file
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Customization
+- Update content: Edit index.html or the framework's main page to change your bio, projects, and links.
+- Projects: Add or edit project cards / JSON data used to populate the gallery.
+- Styles: Tweak variables or theme tokens in styles/ to change colors and typography.
+- Resume: Replace the resume file in public/ and update the download link.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Deployment
+- GitHub Pages
+  1. Push to the gh-pages branch or configure GitHub Pages to serve from main / docs.
+  2. If using a static build step, generate the build and push the output to gh-pages.
+- Netlify / Vercel
+  1. Connect your GitHub repository.
+  2. Set build command (e.g., npm run build) and publish directory (e.g., dist or build).
+  3. Deploy and configure custom domain if desired.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Accessibility & Performance tips
+- Use semantic HTML elements (header, nav, main, footer).
+- Provide alt text for images and aria-labels for interactive controls.
+- Lazy-load offscreen images and defer nonessential scripts.
+- Compress images and use modern formats (WebP/AVIF) when possible.
+- Add meta viewport and structured data to improve SEO and mobile UX.
 
-### `npm run eject`
+Contributing
+Contributions are welcome! If you'd like to suggest improvements or submit a fix:
+1. Fork the repo
+2. Create a branch: git checkout -b feat/your-change
+3. Commit your changes: git commit -m "Describe change"
+4. Push to your fork and open a pull request
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+License
+This project is licensed under the MIT License — see the LICENSE file for details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contact
+- GitHub: https://github.com/Sasisundar2211
+- Email: (add your email here)
+- LinkedIn / Twitter / Personal site: (add links here)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Notes
+- Replace placeholders (live demo link, email, social links) with your real data.
+- If this site uses a specific framework (React, Next.js, Vue) update the README scripts and tech stack sections to reflect exact commands.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks for visiting — feel free to open issues or PRs if you see anything that can be improved!
