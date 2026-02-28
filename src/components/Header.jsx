@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle.jsx';
 import { ArrowLeft } from 'lucide-react';
 
+// Navigation links are defined outside the component to avoid recreation on every render.
+const navLinks = [
+  { name: 'Home', url: '#greeting' },
+  { name: 'Skills', url: '#skills' },
+  { name: 'Education', url: '#education' },
+  { name: 'Experience', url: '#experience' },
+  { name: 'Projects', url: '#projects' },
+  { name: 'Achievements', url: '#achievements' },
+  { name: 'Contact', url: '#contact' },
+];
+
 // Renders the main header for the portfolio page.
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,7 +25,7 @@ const Header = () => {
       // Adds a background to the header when the user scrolls down.
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -51,17 +62,6 @@ const Header = () => {
       };
     }
   }, [isMenuOpen]);
-
-  // Navigation links for the header.
-  const navLinks = [
-    { name: 'Home', url: '#greeting' },
-    { name: 'Skills', url: '#skills' },
-    { name: 'Education', url: '#education' },
-    { name: 'Experience', url: '#experience' },
-    { name: 'Projects', url: '#projects' },
-    { name: 'Achievements', url: '#achievements' },
-    { name: 'Contact', url: '#contact' },
-  ];
 
   return (
     <>

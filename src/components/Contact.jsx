@@ -1,9 +1,28 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import emailjs from '@emailjs/browser';
 import { contactInfo, socialMediaLinks } from '../data/mockData';
 import { Button } from './ui/button';
 import { useToast } from '../hooks/use-toast';
-import { Github, Linkedin, Mail, Phone, Instagram, Twitter, ExternalLink, Gitlab, BrainCircuit, BookOpen, MessageSquare, User, Loader2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Instagram, Twitter, ExternalLink, Gitlab, BookOpen, Loader2 } from 'lucide-react';
+
+// Defined outside the component to avoid recreation on every render.
+const getSocialIcon = (platform) => {
+  // Returns the appropriate icon component or image based on the social media platform.
+  switch(platform) {
+    case 'github': return <Github className="w-8 h-8" />;
+    case 'linkedin': return <Linkedin className="w-8 h-8" />;
+    case 'gmail': return <Mail className="w-8 h-8" />;
+    case 'whatsapp': return <Phone className="w-8 h-8" />;
+    case 'instagram': return <Instagram className="w-8 h-8" />;
+    case 'twitter': return <Twitter className="w-8 h-8" />;
+    case 'gitlab': return <Gitlab className="w-8 h-8" />;
+    case 'kaggle': return <img src="/assets/images/kaggle.png" alt="Kaggle" className="w-8 h-8" />;
+    case 'medium': return <BookOpen className="w-8 h-8" />;
+    case 'stackoverflow': return <img src="/assets/images/stackoverflow.png" alt="Stack Overflow" className="w-8 h-8" />;
+    case 'gravatar': return <img src="/assets/images/gravatar.svg" alt="Gravatar" className="w-8 h-8" />;
+    default: return <ExternalLink className="w-8 h-8" />;
+  }
+};
 
 // Renders the contact form and social media links.
 const Contact = () => {
@@ -11,23 +30,8 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const { toast } = useToast();
 
-  const getSocialIcon = (platform) => {
-    // Returns the appropriate icon component or image based on the social media platform.
-    switch(platform) {
-      case 'github': return <Github className="w-8 h-8" />;
-      case 'linkedin': return <Linkedin className="w-8 h-8" />;
-      case 'gmail': return <Mail className="w-8 h-8" />;
-      case 'whatsapp': return <Phone className="w-8 h-8" />;
-      case 'instagram': return <Instagram className="w-8 h-8" />;
-      case 'twitter': return <Twitter className="w-8 h-8" />;
-      case 'gitlab': return <Gitlab className="w-8 h-8" />;
-      case 'kaggle': return <img src="/assets/images/kaggle.png" alt="Kaggle" className="w-8 h-8" />;
-      case 'medium': return <BookOpen className="w-8 h-8" />;
-      case 'stackoverflow': return <img src="/assets/images/stackoverflow.png" alt="Stack Overflow" className="w-8 h-8" />;
-      case 'gravatar': return <img src="/assets/images/gravatar.svg" alt="Gravatar" className="w-8 h-8" />;
-      default: return <ExternalLink className="w-8 h-8" />;
-    }
-  };
+  // Sanitize phone number once, not on every render.
+  const whatsappNumber = useMemo(() => contactInfo.number.replace(/[^0-9]/g, ''), [contactInfo.number]);
 
   // Handles form submission using the EmailJS service.
   const sendEmail = (e) => {
@@ -79,7 +83,7 @@ const Contact = () => {
                 <Phone className="w-5 h-5 text-primary" />
                 <span>
                   <a
-                    href={`https://wa.me/${contactInfo.number.replace(/[^0-9]/g, '')}`}
+                    href={`https://wa.me/${whatsappNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
