@@ -1,27 +1,10 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { greeting, socialMediaLinks } from '../data/mockData';
-import { Github, Linkedin, Mail, Phone, Instagram, Twitter, ExternalLink, Gitlab, BrainCircuit, BookOpen, MessageSquare, User, Rss, Code, Star } from 'lucide-react';
+import getSocialIcon from '../utils/getSocialIcon';
 
 // Renders the main greeting section (the "Home" page of the portfolio).
 const Greeting = () => {
-  const getSocialIcon = (platform) => {
-    // Dynamically returns an icon component or an image based on the platform name.
-    switch(platform) {
-      case 'github': return <Github className="w-6 h-6" />;
-      case 'linkedin': return <Linkedin className="w-6 h-6" />;
-      case 'gmail': return <Mail className="w-6 h-6" />; // Corresponds to social-icon-hover-gmail
-      case 'whatsapp': return <Phone className="w-6 h-6" />; // Corresponds to social-icon-hover-whatsapp
-      case 'instagram': return <Instagram className="w-6 h-6" />;
-      case 'twitter': return <Twitter className="w-6 h-6" />; // Corresponds to social-icon-hover-twitter
-      case 'gitlab': return <Gitlab className="w-6 h-6" />;
-      case 'kaggle': return <img src="/assets/images/kaggle.png" alt="Kaggle" className="w-6 h-6" />;
-      case 'medium': return <BookOpen className="w-6 h-6" />;
-      case 'stackoverflow': return <img src="/assets/images/stackoverflow.png" alt="Stack Overflow" className="w-6 h-6" />;
-      case 'gravatar': return <img src="/assets/images/gravatar.svg" alt="Gravatar" className="w-6 h-6" />;
-      default: return <ExternalLink className="w-6 h-6" />;
-    }
-  };
 
 
   return (

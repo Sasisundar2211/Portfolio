@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { bigProjects, openSource } from '../data/mockData';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
+import SectionHeader from './SectionHeader';
+import FooterLinks from './FooterLinks';
 
 // Renders the projects section, including open source contributions and major projects.
 const Projects = () => {
@@ -30,12 +32,7 @@ const Projects = () => {
         )}
 
         {/* The main section showcasing featured projects. */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">{bigProjects.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {bigProjects.subtitle}
-          </p>
-        </div>
+        <SectionHeader title={bigProjects.title} subtitle={bigProjects.subtitle} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {bigProjects.projects.map((project, index) => (
@@ -67,22 +64,7 @@ const Projects = () => {
                 </div>
 
                 {/* Links to the live demo or source code. */}
-                <div className="flex flex-wrap gap-3">
-                  {project.footerLink.map((link, linkIndex) => (
-                    <Button asChild variant="outline" size="sm">
-                      <a
-                        key={linkIndex}
-                        href={link.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        {link.name}
-                      </a>
-                    </Button>
-                  ))}
-                </div>
+                <FooterLinks links={project.footerLink} />
               </div>
             </div>
           ))}
