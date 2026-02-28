@@ -1,15 +1,17 @@
 import React from 'react';
 import { workExperiences } from '../data/mockData';
+import SectionHeader from './SectionHeader';
+import DescriptionBullets from './DescriptionBullets';
 
 // Renders the Work Experience section, mapping over data to create experience cards.
 const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-background text-foreground fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">{workExperiences.title}</h2>
-          <p className="text-xl text-muted-foreground">A timeline of my professional growth and contributions.</p>
-        </div>
+        <SectionHeader
+          title={workExperiences.title}
+          subtitle="A timeline of my professional growth and contributions."
+        />
 
         <div className="space-y-16 md:space-y-20">
           {workExperiences.experience.map((exp, index) => (
@@ -37,14 +39,7 @@ const Experience = () => {
                   </div>
 
                   <p className="text-muted-foreground mb-4">{exp.desc}</p>
-
-                  {exp.descBullets && exp.descBullets.length > 0 && (
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      {exp.descBullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="text-sm">{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
+                  <DescriptionBullets bullets={exp.descBullets} />
                 </div>
               </div>
             </div>

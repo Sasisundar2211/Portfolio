@@ -1,19 +1,17 @@
 import React from 'react';
-import { Button } from './ui/button';
 import { achievementSection } from '../data/mockData';
-import { ExternalLink } from 'lucide-react';
+import SectionHeader from './SectionHeader';
+import FooterLinks from './FooterLinks';
 
 // Renders the achievements and certifications section.
 const Achievements = () => {
   return (
     <section id="achievements" className="py-20 bg-background text-foreground fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">{achievementSection.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Recognitions and milestones from my journey in technology and problem-solving.
-          </p>
-        </div>
+        <SectionHeader
+          title={achievementSection.title}
+          subtitle="Recognitions and milestones from my journey in technology and problem-solving."
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievementSection.achievementsCards.map((achievement, index) => (
@@ -34,26 +32,7 @@ const Achievements = () => {
                 </h3>
                 
                 {/* Links to view the certificate or paper. */}
-                <div className="flex flex-wrap gap-2">
-                  {achievement.footerLink.map((link, linkIndex) => (
-                    <Button
-                      key={linkIndex}
-                      asChild
-                      variant="outline"
-                      size="sm"
-                    >
-                      <a 
-                        href={link.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1"
-                      >
-                        <ExternalLink className="w-3 h-3" />
-                        {link.name}
-                      </a>
-                    </Button>
-                  ))}
-                </div>
+                <FooterLinks links={achievement.footerLink} />
               </div>
             </div>
           ))}

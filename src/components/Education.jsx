@@ -1,14 +1,14 @@
 import React from 'react';
 import { educationInfo } from '../data/mockData';
+import SectionHeader from './SectionHeader';
+import DescriptionBullets from './DescriptionBullets';
 
 // Renders the Education section, mapping over data to create individual school cards.
 const Education = () => {
   return (
     <section id="education" className="py-20 bg-background text-foreground fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Education</h2>
-        </div>
+        <SectionHeader title="Education" />
 
         <div className="space-y-16 md:space-y-20">
           {educationInfo.schools.map((school, index) => (
@@ -36,14 +36,7 @@ const Education = () => {
                   </div>
 
                   <p className="text-muted-foreground mb-4">{school.desc}</p>
-
-                  {school.descBullets && school.descBullets.length > 0 && (
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      {school.descBullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="text-sm">{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
+                  <DescriptionBullets bullets={school.descBullets} />
                 </div>
               </div>
             </div>
