@@ -98,6 +98,18 @@ export const workExperiences = {
   subtitle: "Internships, Training, and Professional Experiences",
   experience: [
     {
+      role: "Founder & CEO",
+      company: "GIANT",
+      companylogo: "/assets/images/github_project.png",
+      date: "December 2025–Present",
+      desc: "Building FirmRunner, an AI agent suite for accounting firms. Full product ownership: architecture, GTM, customer discovery, investor narrative.",
+      descBullets: [
+        "Architecting 5-agent AI operations stack for small accounting firms",
+        "Leading customer discovery and beta program for Q2 2026 launch",
+        "Managing end-to-end product: from AI system design to investor narrative"
+      ]
+    },
+    {
       role: "AI/ML Intern",
       company: "BITS Pilani", 
       companylogo: "/assets/images/BV intern.png",
@@ -146,6 +158,24 @@ export const bigProjects = {
   subtitle: "Notable applications built by me", 
   projects: [
     {
+      projectName: "FirmRunner — AI Operations Suite",
+      projectDesc: "5 AI agents that eliminate 22-43 hours of monthly admin from small accounting firms. Intake Agent, Document Agent, Deadline Agent, Billing Agent, Report Agent. Built on Claude API, Make.com, Airtable, Gmail API. A firm owner answers 10 questions and receives a configured AI operations stack. Status: Customer Discovery — Beta launching Q2 2026.",
+      techStack: ["Claude API", "Make.com", "Airtable", "Gmail API", "AI Agents"],
+      footerLink: [
+        { name: "View on Github", url: "https://github.com/Sasisundar2211" }
+      ],
+      image: "/assets/images/github_project.png"
+    },
+    {
+      projectName: "ProcureGuard",
+      projectDesc: "Built ProcureGuard — a 3-agent autonomous system powered by Gemini 1.5 Flash that detects price drift in purchase orders, enforces contract compliance, and automates vendor communication. Full-stack: FastAPI backend, React dashboard, Docker containerized, CI/CD via GitHub Actions, deployable on Google Cloud Run.",
+      techStack: ["Gemini 1.5 Flash", "FastAPI", "React", "Docker", "GitHub Actions", "Google Cloud Run"],
+      footerLink: [
+        { name: "View on Github", url: "https://github.com/Sasisundar2211/Procurement_Agent" }
+      ],
+      image: "/assets/images/github_project.png"
+    },
+    {
       projectName: "Sample_Multitool_Agent",
       projectDesc: "A versatile multi-tool agent showcasing various automation and AI capabilities with modern interface.", 
       techStack: ["Python", "AI/ML", "Automation", "APIs"],
@@ -164,8 +194,17 @@ export const bigProjects = {
       image: "/assets/images/github_project.png" 
     },
     {
+      projectName: "n8n_Workflows",
+      projectDesc: "Automated LinkedIn and Notion content workflows for professionals using n8n automation. Reduces manual content publishing time from hours to minutes.",
+      techStack: ["n8n", "LinkedIn API", "Notion API", "Automation"],
+      footerLink: [
+        { name: "View on Github", url: "https://github.com/Sasisundar2211/n8n_Workflows" }
+      ],
+      image: "/assets/images/github_project.png"
+    },
+    {
       projectName: "User Profiling & Segmentation",
-      projectDesc: "A machine learning project for user profiling and segmentation to enable targeted advertising and personalized recommendations.",
+      projectDesc: "ML-driven user clustering and behavioral segmentation system. Segments users into actionable profiles using unsupervised learning techniques.",
       techStack: ["Python", "Pandas", "Scikit-learn", "Data Analysis"],
       footerLink: [
         { name: "View on Github", url: "https://github.com/Sasisundar2211/User_Profiling_Segmentation" }
@@ -256,7 +295,8 @@ export const contactInfo = {
   title: "Contact Me ☎️",
   subtitle: "Reach out for collaborations or career opportunities.",
   number: "+91-79890 37427", 
-  email_address: "sasisundhar2211@gmail.com"
+  email_address: "sasisundhar2211@gmail.com",
+  location: "Visakhapatnam, India"
 };
 
 // Configuration for the open source contributions section.
