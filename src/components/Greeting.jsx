@@ -35,7 +35,8 @@ const Greeting = () => {
               <span className="inline-block animate-bounce ml-4">👋</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A passionate AI & ML Engineer dedicated to building intelligent applications and solving complex problems with data.
+              Founder @ GIANT. Building FirmRunner — AI that runs accounting firms.<br />
+              I deploy AI systems that do operational work. 15+ systems shipped. Zero theoretical.
             </p>
           </div>
 
