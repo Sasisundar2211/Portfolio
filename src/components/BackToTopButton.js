@@ -1,18 +1,11 @@
-111
 import React, { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import './BackToTopButton.css';
 
+const SCROLL_THRESHOLD = 300;
+
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -22,7 +15,10 @@ const BackToTopButton = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => {
+      setIsVisible(window.scrollY > SCROLL_THRESHOLD);
+    };
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
