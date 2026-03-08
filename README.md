@@ -98,8 +98,8 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 Contact
 - GitHub: https://github.com/Sasisundar2211
-- Email: (add your email here)
-- LinkedIn / Twitter / Personal site: (add links here)
+- Email: sasisundhar2211@gmail.com
+- LinkedIn / Twitter / Personal site: https://www.linkedin.com/in/bsv-sasi-sundar
 
 Notes
 - Replace placeholders (live demo link, email, social links) with your real data.
