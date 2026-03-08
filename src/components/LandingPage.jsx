@@ -1,83 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Github, Star, Users, GitFork, ExternalLink, Download, Zap, Smartphone, Palette, Settings, Code, Mail, Menu, X } from 'lucide-react';
 
+// Defined outside the component to avoid recreation on every render.
+const stats = [
+  { icon: <Star className="w-6 h-6" />, count: "500+", label: "GitHub Stars" },
+  { icon: <GitFork className="w-6 h-6" />, count: "200+", label: "Forks" },
+  { icon: <Users className="w-6 h-6" />, count: "1000+", label: "Users" },
+  { icon: <Github className="w-6 h-6" />, count: "50+", label: "Contributors" }
+];
+
+const features = [
+  { 
+    icon: <Zap className="w-6 h-6 text-primary" />,
+    title: "⚡ Fast Performance",
+    description: "Optimized React components with modern build tools"
+  },
+  {
+    icon: <Smartphone className="w-6 h-6 text-primary" />,
+    title: "📱 Responsive Design", 
+    description: "Looks great on desktop, tablet, and mobile devices"
+  },
+  {
+    icon: <Palette className="w-6 h-6 text-primary" />,
+    title: "🎨 Modern UI/UX",
+    description: "Clean, professional design with smooth animations"
+  },
+  {
+    icon: <Settings className="w-6 h-6 text-primary" />,
+    title: "🔧 Easy Customization",
+    description: "Simple configuration file to personalize your portfolio"
+  },
+  {
+    icon: <Code className="w-6 h-6 text-primary" />,
+    title: "📊 GitHub Integration",
+    description: "Automatically showcase your repositories and contributions"
+  },
+  {
+    icon: <Mail className="w-6 h-6 text-primary" />,
+    title: "📧 Contact Form",
+    description: "Built-in contact form with email integration"
+  }
+];
+
 // Renders the main landing page for the portfolio.
 const LandingPage = () => {
-  const stats = [
-    { icon: <Star className="w-6 h-6" />, count: "500+", label: "GitHub Stars" },
-    { icon: <GitFork className="w-6 h-6" />, count: "200+", label: "Forks" },
-    { icon: <Users className="w-6 h-6" />, count: "1000+", label: "Users" },
-    { icon: <Github className="w-6 h-6" />, count: "50+", label: "Contributors" }
-  ];
-
-  const features = [
-    { 
-      icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "⚡ Fast Performance",
-      description: "Optimized React components with modern build tools"
-    },
-    {
-      icon: <Smartphone className="w-6 h-6 text-primary" />,
-      title: "📱 Responsive Design", 
-      description: "Looks great on desktop, tablet, and mobile devices"
-    },
-    {
-      icon: <Palette className="w-6 h-6 text-primary" />,
-      title: "🎨 Modern UI/UX",
-      description: "Clean, professional design with smooth animations"
-    },
-    {
-      icon: <Settings className="w-6 h-6 text-primary" />,
-      title: "🔧 Easy Customization",
-      description: "Simple configuration file to personalize your portfolio"
-    },
-    {
-      icon: <Code className="w-6 h-6 text-primary" />,
-      title: "📊 GitHub Integration",
-      description: "Automatically showcase your repositories and contributions"
-    },
-    {
-      icon: <Mail className="w-6 h-6 text-primary" />,
-      title: "📧 Contact Form",
-      description: "Built-in contact form with email integration"
-    }
-  ];
-
-  const handleGetStarted = () => {
-    window.location.href = '/portfolio';
-  };
-
-  const handleViewDemo = () => {
-    window.location.href = '/portfolio';
-  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false); // For mobile menu
   const [navVisible, setNavVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
   const [typedName, setTypedName] = useState('');
   const fullName = '</BSV Sasi Sundar/>';
 
-  // Handles the scroll event to show/hide the navigation bar.
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    // Hide navbar on scroll down, show on scroll up
-    if (currentScrollY > lastScrollY && currentScrollY > 200) { // Hides after scrolling 200px down
-      setNavVisible(false);
-    } else {
-      setNavVisible(true);
-    }
-    setLastScrollY(currentScrollY);
-  };
-
-  // Attaches and cleans up the scroll event listener.
+  // Attaches a single scroll listener for both nav hide/show and parallax effect.
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Hide navbar on scroll down, show on scroll up
+      if (currentScrollY > lastScrollYRef.current && currentScrollY > 200) {
+        setNavVisible(false);
+      } else {
+        setNavVisible(true);
+      }
+      lastScrollYRef.current = currentScrollY;
+
+      // Parallax background effect
+      const container = document.getElementById('landing-page-container');
+      if (container) {
+        container.style.backgroundPositionY = currentScrollY * 0.3 + 'px';
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
 
   // Creates a typing effect for the name tag.
   useEffect(() => {
@@ -93,16 +91,6 @@ const LandingPage = () => {
     }, 60); // Adjust typing speed here (in ms)
 
     return () => clearInterval(typingInterval);
-  }, []);
-
-  // Handles the parallax background effect on scroll.
-  useEffect(() => {
-    const handleParallax = () => {
-      const offset = window.pageYOffset;
-      document.getElementById('landing-page-container').style.backgroundPositionY = offset * 0.3 + 'px';
-    };
-    window.addEventListener('scroll', handleParallax);
-    return () => window.removeEventListener('scroll', handleParallax);
   }, []);
 
   return (
@@ -124,7 +112,7 @@ const LandingPage = () => {
                 GitHub
               </a>
               <Button 
-                onClick={handleGetStarted}
+                onClick={() => { window.location.href = '/portfolio'; }}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 Get Started!
@@ -278,7 +266,7 @@ const LandingPage = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              onClick={handleGetStarted}
+              onClick={() => { window.location.href = '/portfolio'; }}
               size="lg"
               className="glass-button glass-button-primary px-8 py-3 text-base"
             >

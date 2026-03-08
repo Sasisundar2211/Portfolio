@@ -1,18 +1,13 @@
 import React from 'react';
 import { skillsSection } from '../data/mockData';
+import SectionHeader from './SectionHeader';
 
 // Renders the "What I do" section with a list of skills and software icons.
 const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-background text-foreground fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">{skillsSection.title}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            {skillsSection.subTitle}
-          </p>
-        </div>
+        <SectionHeader title={skillsSection.title} subtitle={skillsSection.subTitle} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column: A descriptive list of key skills. */}

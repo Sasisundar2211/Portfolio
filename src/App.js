@@ -24,18 +24,18 @@ import Loader from "./Loader.js";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-
+// Defined outside the component so it is not recreated on every render.
+const helloWorldApi = async () => {
+  try {
+    const response = await axios.get(`${API}/`);
+    console.log(response.data.message);
+  } catch (e) {
+    console.error(e, `errored out requesting / api`);
+  }
+};
 
 // The main portfolio page component, which aggregates all other sections.
 const Portfolio = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
 
   // A simple API call to check backend connectivity on component mount.
   useEffect(() => {
