@@ -4,6 +4,17 @@ Welcome — this repository contains my personal portfolio website: a polished, 
 
 [![Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](#live-demo) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license) [![Languages](https://img.shields.io/github/languages/top/Sasisundar2211/Portfolio?logo=github)](https://github.com/Sasisundar2211/Portfolio)
 
+> **Project note:** this is the full-stack portfolio implementation. For the current lightweight public profile, see the separate `Personal_Portfolio` repository. This project remains the richer reference implementation.
+
+## Local development
+
+```bash
+npm ci
+npm run build
+```
+
+The optional FastAPI backend requires `backend/.env` based on [`backend/.env.example`](backend/.env.example). Never commit provider credentials.
+
 Table of contents
 - About
 - Features
