@@ -22,13 +22,15 @@ import Loader from "./Loader.js";
 
 // Backend API URL from environment variables.
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : null;
 
 
 
 // The main portfolio page component, which aggregates all other sections.
 const Portfolio = () => {
   const helloWorldApi = async () => {
+    if (!API) return;
+
     try {
       const response = await axios.get(`${API}/`);
       console.log(response.data.message);
